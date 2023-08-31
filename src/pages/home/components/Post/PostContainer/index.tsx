@@ -1,3 +1,4 @@
+import { Github } from "../../../../../context/context";
 import {
   PostContainerBox,
   PostContent,
@@ -7,25 +8,19 @@ import {
   PostTitle,
 } from "./styles";
 
-interface IssuesProps {
-  title: string;
-  text: string;
-  data: string;
+export interface GitPost {
+  post: Github;
 }
 
-interface Issues {
-  Issue: IssuesProps;
-}
-
-export function PostContainer({ Issue }: Issues) {
+export function PostContainer({ post }: GitPost) {
   return (
-    <PostMainBox>
+    <PostMainBox to={`/PostPublished/${post.number}`}>
       <PostContainerBox>
         <PostHeader>
-          <PostTitle>{Issue.title}</PostTitle>
-          <PostData>{Issue.data}</PostData>
+          <PostTitle>{post.title}</PostTitle>
+          <PostData>{post.createdAt}</PostData>
         </PostHeader>
-        <PostContent>{Issue.text}</PostContent>
+        <PostContent>{post.body}</PostContent>
       </PostContainerBox>
     </PostMainBox>
   );

@@ -45,6 +45,16 @@ export const PostPublishedLinks = styled.div`
 
   font-size: 0.75rem;
   line-height: 160%;
+  div{
+    color: ${(props) => props.theme.colors.blue};
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    img {
+      padding-left: 0.5rem;
+      margin: 0 auto;
+    }
+  }
 
   a {
     color: ${(props) => props.theme.colors.blue};

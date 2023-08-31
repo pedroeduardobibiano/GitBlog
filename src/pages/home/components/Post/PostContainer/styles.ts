@@ -1,6 +1,7 @@
+import { Link } from "react-router-dom";
 import { styled } from "styled-components";
 
-export const PostMainBox = styled.div`
+export const PostMainBox = styled(Link)`
 cursor: pointer;
   :hover {
     border-color: ${(props) => props.theme.colors["base-label"]};
@@ -35,6 +36,12 @@ export const PostTitle = styled.div`
   flex: 3;
 
   font-weight: bold;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 `;
 
 export const PostData = styled.div`
@@ -50,4 +57,10 @@ export const PostContent = styled.div`
   font-size: 1rem;
   line-height: 160%;
   color: ${(props) => props.theme.colors["base-text"]};
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
 `;

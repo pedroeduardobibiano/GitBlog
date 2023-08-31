@@ -1,14 +1,16 @@
-import { Issues } from "../../../../Data/data";
+import { useContext } from "react";
 import { PostContainer } from "./PostContainer";
 import { PostGlobalContainer, PostMain } from "./styles";
-
+import { NewGitProvider } from "../../../../context/context";
 
 export function Post() {
+  const { issue } = useContext(NewGitProvider);
+
   return (
     <PostGlobalContainer>
       <PostMain>
-        {Issues.map((Itens) => {
-          return <PostContainer  key={Itens.text} Issue={Itens} />;
+        {issue.map((post) => {
+          return <PostContainer key={post.number} post={post} />;
         })}
       </PostMain>
     </PostGlobalContainer>

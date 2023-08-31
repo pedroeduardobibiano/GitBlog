@@ -1,3 +1,4 @@
+import { useContext } from "react";
 import {
   InputContainer,
   InputSearch,
@@ -5,13 +6,17 @@ import {
   SearchIssueLegend,
   TitlePublished,
 } from "./styles";
+import { NewGitProvider } from "../../../../context/context";
 
 export function SearchContent() {
+
+const {countPosts} = useContext(NewGitProvider)
+
   return (
     <InputContainer>
       <SearchIssueLegend>
         <TitlePublished>Publicações</TitlePublished>
-        <QuantityPublished>6 publicações</QuantityPublished>
+        <QuantityPublished>{countPosts} publicações</QuantityPublished>
       </SearchIssueLegend>
 
       <InputSearch>

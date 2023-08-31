@@ -25,41 +25,37 @@ export function Perfil() {
 
   return (
     <PerfilContainer>
-      {perfil.map((perfilItem) => {
-        return (
-          <PerfilMain key={perfilItem.id}>
-            <PerfilImage>
-              <img src={perfilItem.avatar_url} alt="" />
-            </PerfilImage>
-            <PerfilStatus>
-              <PerfilContent>
-                <Title>{perfilItem.name}</Title>
-                <LogoGitAccess>
-                  <a href={perfilItem.html_url} target="blank">
-                    github
-                    <img src={gitAccess} alt="" />
-                  </a>
-                </LogoGitAccess>
-              </PerfilContent>
-              <SubTitle>{perfilItem.bio}</SubTitle>
-              <Icons>
-                <ProfileIcons
-                  icons={<img src={gitImage} alt="nome do usuario no github" />}
-                  title={perfilItem.login}
-                />
-                <ProfileIcons
-                  icons={<img src={work} alt="nome da empresa onde trabalha" />}
-                  title={perfilItem.company == null ? 'Não registrado' : perfilItem.company}
-                />
-                <ProfileIcons
-                  icons={<img src={ImgPerfil} alt="numero de seguidores" />}
-                  title={`${perfilItem.followers} ${"seguidores"}`}
-                />
-              </Icons>
-            </PerfilStatus>
-          </PerfilMain>
-        );
-      })}
+      <PerfilMain key={perfil.id}>
+        <PerfilImage>
+          <img src={perfil.avatar_url} alt="" />
+        </PerfilImage>
+        <PerfilStatus>
+          <PerfilContent>
+            <Title>{perfil.name}</Title>
+            <LogoGitAccess>
+              <a href={perfil.html_url} target="blank">
+                github
+                <img src={gitAccess} alt="" />
+              </a>
+            </LogoGitAccess>
+          </PerfilContent>
+          <SubTitle>{perfil.bio}</SubTitle>
+          <Icons>
+            <ProfileIcons
+              icons={<img src={gitImage} alt="nome do usuario no github" />}
+              title={perfil.login}
+            />
+            <ProfileIcons
+              icons={<img src={work} alt="nome da empresa onde trabalha" />}
+              title={perfil.company == null ? "Não registrado" : perfil.company}
+            />
+            <ProfileIcons
+              icons={<img src={ImgPerfil} alt="numero de seguidores" />}
+              title={`${perfil.followers} ${"seguidores"}`}
+            />
+          </Icons>
+        </PerfilStatus>
+      </PerfilMain>
     </PerfilContainer>
   );
 }

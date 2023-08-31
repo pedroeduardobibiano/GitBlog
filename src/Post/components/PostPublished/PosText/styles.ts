@@ -1,31 +1,30 @@
 import { styled } from "styled-components";
 
-export const PostTextContent = styled.div`
-  margin-top: 0.2rem;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-
+export const PostTextContent = styled.section`
+   display: flex;
   flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 8rem;
+  line-height: 190%;
 
-  text-decoration: none;
-  font-weight: normal;
-  margin-bottom: 2rem;
+  img {
+    width: 100%;
+  }
+
+  h1,
+  h2,
+  h3 {
+    color: ${({ theme }) => theme.colors.blue};
+  }
+
+  ul {
+    list-style: inherit;
+  
+  }
+
+  pre {
+    background: ${({ theme }) => theme.colors["base-post"]};
+    padding: 1rem;
+  }
 `;
 
-export const PostTextContainer = styled.p`
-  font-size: 1rem;
-  line-height: 160%;
-
-  color: ${(props) => props.theme.colors["base-text"]};
-`;
-
-export const PostTextTitle = styled.h4`
-  color: ${(props) => props.theme.colors.blue};
-  text-decoration: underline;
-
-  font-weight: normal;
-  margin-top: 1.2rem;
-`;
